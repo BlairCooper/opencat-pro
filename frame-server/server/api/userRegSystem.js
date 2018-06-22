@@ -6,7 +6,8 @@ const internals = {};
 
 const locale = require('locale');
 
-var Config = require("../config/config.js");
+let Config = require("../config/config.js");
+
 const helperMethods = require('../helperMethods.js'); //http://stackoverflow.com/questions/5726729/how-to-parse-json-using-node-js
 const homeJSON = require(Config.getProfilePath() + "/homepage_text.json");
 const Boom = require('boom');
