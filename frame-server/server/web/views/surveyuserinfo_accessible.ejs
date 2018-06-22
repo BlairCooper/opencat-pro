@@ -17,8 +17,9 @@
     <form id="questionnaire" class="container" action="#" data-validationgroup>
       <h4>Before we begin the questionnaire, please answer the following questions</h4><br>
       <br>
-      <%- include('./partials/question_renderer', {questions: questions}); %>
-    </form>
+      <%- include('./partials/question_renderer', {questions: questions, browserLocales:browserLocales, getLocaleResource: getLocaleResource}); %>
+
+    </div>
   </div>
 
   <!--Buttons Section-->
