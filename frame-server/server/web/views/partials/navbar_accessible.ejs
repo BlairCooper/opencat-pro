@@ -1,7 +1,7 @@
 <!-- NAVIGATION BAR -->
 <div class="container navContainer">
 
-  <a class="skip-navigation sr-only sr-only-focusable" href="#page-title">Skip Navigation</a>
+  <a class="skip-navigation sr-only sr-only-focusable" href="#page-title"><%= gettext("Skip Navigation") %></a>
   <div class="row">
     <div class="navbar-header active">
       <a>
@@ -11,10 +11,10 @@
     </div>
     <nav class="collapse navbar-collapse" aria-label="Main navigation" id="topNavList" aria-expanded="false">
       <ul class="nav navbar-nav navbar-right marginTop40" aria-expanded="false">
-        <li><a href="/">Home</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-        <li><a href="/login">Login</a></li>
+        <li><a href="/"><%= gettext("Home") %></a></li>
+        <li><a href="/register"><%= gettext("Register") %></a></li>
+        <li><a href="/contact"><%= gettext("Contact Us") %></a></li>
+        <li><a href="/login"><%= gettext("Login") %></a></li>
       </ul>
     </nav>
 

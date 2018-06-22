@@ -10,7 +10,7 @@
     <section id="page-title">
       <div class="row">
         <div class="col-md-12">
-          <h3>Please sign up for a new account</h3>
+          <h3><%= gettext("Please sign up for a new account") %></h3>
         </div>
       </div>
     </section>
@@ -20,10 +20,10 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="form-group required">
-          <label class="demographic" for="firstName">First Name <sup>*</sup> </label>
-          <input id="firstName" class="form-control required " maxlength="64" tabindex="1"
+          <label for="firstName"><%= gettext("First Name") %> <sup>*</sup> </label>
+          <input id="firstName" class="form-control required " maxlength="64"
                  data-validate="notBlank firstName"
-                 placeholder="First Name" size="20" type="text">
+                 placeholder="<%= gettext('First Name') %>" size="20" type="text">
         </div>
         <div class="form-group ">
           <label class="demographic" for="middleName">Middle Name (optional)</label>
@@ -32,69 +32,67 @@
                  placeholder="Middle Name" size="20" type="text">
         </div>
         <div class="form-group required">
-          <label class="demographic" for="lastName">Last Name <sup>*</sup> </label>
+          <label for="lastName"><%= gettext("Last Name") %> <sup>*</sup> </label>
           <input id="lastName" data-validate="notBlank lastName" class="form-control required" maxlength="64"
-                 tabindex="3"
-                 placeholder="Last Name" size="20" type="text">
+                 placeholder="<%= gettext('Last Name') %>" size="20" type="text">
 
         </div>
         <div class="form-group required">
-          <label class="demographic" for="email">Email (username) <sup>*</sup></label>
+          <label for="email"><%= gettext("Email (username)") %> <sup>*</sup></label>
           <input id="email" data-validate="notBlank email" class="form-control required" maxlength="80"
-                 tabindex="4"
-                 placeholder="Email" size="20" type="text">
+                 placeholder="<%= gettext('Email') %>" size="20" type="text">
         </div>
         <div class="form-group required">
-          <label class="demographic" for="dateOfBirth">Date Of Birth<sup>*</sup> </label>
-          <input class="form-control required" type="text" id="dateOfBirth" name="Date of birth" value=""
-                 tabindex="5"
-                 placeholder=MM/DD/YYYY aria-describedby="dateofbirthInfo" data-validate="notBlank date"/>
-        </div>
-
-        <div class="form-group required">
-          <label class="demographic" for="password">Password <sup>*</sup></label>
+          <label for="password"><%= gettext("Password") %> <sup>*</sup></label>
           <input id="password" class="form-control required"
                  data-validate="notBlank validPassword"
-                 type="password" tabindex="7"
-                 placeholder="Type Password" size="20">
-
-          <div class="row-fluid">
-          <span id="passReq1">Lowercase ,</span>
-          <span id="passReq2">Uppercase ,</span>
-          <span id="passReq3">Numbers ,</span>
-          <span id="passReq4">Special Characters ,</span>
-          <span id="passReq5">Length >= 10</span>
-          </div>
-
+                 type="password"
+                 placeholder="<%= gettext('Type Password') %>" size="20">
+          <ul>
+            <li id="passReq1"><%= gettext("Lowercase") %></li>
+            <li id="passReq2"><%= gettext("Uppercase") %></li>
+            <li id="passReq3"><%= gettext("Numbers") %></li>
+            <li id="passReq4"><%= gettext("Special Characters") %></li>
+            <li id="passReq5"><%= gettext("Length >= 10") %></li>
+          </ul>
         </div>
 
-        <div class="form-group required">
-          <label class="demographic" for="confpass">Confirm Password <sup>*</sup></label>
-          <input id="confpass" class="form-control"
-                 data-validate="notBlank confirmPass"
-                 type="password" tabindex="8"
-                 placeholder="Retype password" size="20">
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="form-group ">
+          <label for="middleName"><%= gettext("Middle Name (optional)") %></label>
+          <input id="middleName" class="form-control" maxlength="64"
+                 data-validate="middleName"
+                 placeholder="<%= gettext('Middle Name') %>" size="20" type="text">
         </div>
 
 
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="form-group required">
-
-          <div class="form-group required">
-            <label class="demographic" for="phoneNumber">Phone Number<sup>*</sup> </label>
-            <input class="form-control required" type="text" id="phoneNumber" name="Phone Number" value=""
-                   tabindex="9"
-                   placeholder="1xxxxxxxxxx" aria-describedby="phoneNumberinfo" data-validate="notBlank phoneNumber"/>
+          <label for="gender"><%= gettext("Gender") %> <sup>*</sup> </label>
+          <div class="wrapper">
+              <span><select id="gender" data-validate="notBlank gender" class="custom-dropdown">
+                  <option value="null"><%= gettext("Select") %></option>
+                  <option value="male"><%= gettext("Male") %></option>
+                  <option value="female"><%= gettext("Female") %></option>
+                </select></span>
           </div>
 
-          <label class="demographic" for="gender">How do you describe yourself? (check one)<sup>*</sup> </label>
-          <div class="wrapper-custom-dropdown">
-                  <span><select id="gender" data-validate="notBlank gender" tabindex="10" class="custom-dropdown">
-                  <option value="null">Select</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other/Prefer not to respond</option>
+          <div class="form-group required">
+            <label for="confpass"><%= gettext("Confirm Password") %> <sup>*</sup></label>
+            <input id="confpass" class="form-control"
+                   data-validate="notBlank confirmPass"
+                   type="password"
+                   placeholder="<%= gettext('Retype password') %>" size="20">
+                   <script>$("#confpass").attr("placeholder", "<%= gettext('Retype password') %>");</script>
+          </div>
+
+          <div class="form-group required">
+            <label for="yearOfInjury"><%= gettext("Year Of Injury") %> <sup>*</sup> </label>
+            <input class="form-control" type="text" id="yearOfInjury" name="Year Of Injury" value=""
+                   placeholder="<%= gettext('YYYY') %>" aria-describedby="dateInfo" data-validate="notBlank injuryYear"/>
+          </div>
 
                   </select></span>
           </div>
@@ -104,46 +102,42 @@
    <%- include('./partials/question_renderer_signup', {questions: dynamicQuestions}); %>
 
     <div>
-      <label class="demographic" for="comments">Comments (optional) </label>
-      <textarea id="comments" class="form-control" maxlength="255" placeholder="Special Instructions" type="text"
-                tabindex="19"
+      <label for="comments"><%= gettext("Comments (optional)") %>" </label>
+      <textarea id="comments" class="form-control" maxlength="255" placeholder="<%= gettext('Special Instructions') %>" type="text"
                 wrap="soft"></textarea>
+      <script>$("#comments").attr("placeholder", "<%= gettext('Special Instructions') %>");</script>
     </div>
-   <div class="form-group required vertical-center-container">
-        <input id="tncCheckbox" class="form-control required" type="checkbox" disabled="true" data-validate="tncChecked required" data-toggle="tooltip" data-placement="bottom" title="Please read through our Terms and Conditions and accept">
-        <a id="tncModalLink" href="#" data-toggle="modal" data-target="#tncModal">Terms and Conditions</a> <sup>*</sup>
-      </div>
-     <!-- TODO - remove clinician here?
-     <div class="form-group vertical-center-container">
-        <input id="clinicianCheckbox" class="form-control required" type="checkbox">
-        Register as Clinician
-      </div>
-     -->
-      <button id="form1Sbm" data-validationtrigger class="btn btn-primary">Sign Up</button>
+    <div class="form-group required vertical-center-container">
+      <input id="tncCheckbox" class="form-control required" type="checkbox" disabled="true" data-validate="tncChecked required" data-toggle="tooltip" data-placement="bottom" title="Please read through our Terms and Conditions and accept">
+      <a id="tncModalLink" href="#" data-toggle="modal" data-target="#tncModal"><%= gettext("Terms and Conditions") %></a> <sup>*</sup>
+    </div>
+    <div class="form-group vertical-center-container">
+      <input id="clinicianCheckbox" class="form-control required" type="checkbox">
+      <%= gettext("Register as Clinician") %>
+    </div>
+    <button id="form1Sbm" data-validationtrigger class="btn btn-primary"><%= gettext("Sign Up") %></button>
   </form>
 
-
-    <div class="modal fade" id="tncModal" tabindex="-1" role="dialog" aria-labelledby="Terms and Conditions Modal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="tncModalLabel">Terms and Conditions</h4>
-           </div>
-          <div class="modal-body">
-          </div>
-           <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Do Not Accept</button>
-              <button type="button" class="btn btn-success disabled">Accept</button>
-           </div>
-         </div>
-       </div>
+  <div class="modal fade" id="tncModal" tabindex="-1" role="dialog" aria-labelledby="Terms and Conditions Modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="tncModalLabel"><%= gettext("Terms and Conditions") %></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><%= gettext("Do Not Accept") %></button>
+          <button type="button" class="btn btn-success disabled"><%= gettext("Accept") %></button>
+        </div>
+      </div>
     </div>
 
 
 </main>
 
-<a href="#" class="scrollToTop" alt="Scroll To Top"><span class="sr-only">Scroll To Top</span></a>
+<a href="#" class="scrollToTop" alt="Scroll To Top"><span class="sr-only"><%= gettext("Scroll To Top") %></span></a>
 <%- include('./partials/footer_accessible'); %>
 <!-- end footer -->
 <script src="/public/js/tncText.js"></script>
@@ -218,7 +212,6 @@
 
 <!-- JAVASCRIPT FILES -->
 <!-- FORM VALIDATION -->
-<script src="public/js/formvalidatorconfig.js"></script>
-<script src="public/js/formvalidator.js"></script>
+<%- include('./partials/formvalidator', {}); %>
 </body>
 </html>

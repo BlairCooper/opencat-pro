@@ -4,12 +4,12 @@
     <div class="nav-collapse collapse" id="topNavList" role="navigation">
       <div>
         <ul class="titleFont nav pull-right" aria-labelledby="topNavList">
-          <li><a href="/">Home</a></li>
-          <li id="startsurvey">Start Survey</li>
-          <li><a href="/contact">Contact Us</a></li>
-          <li id="logout">Logout</li>
+          <li><a href="/"><%= gettext("Home") %></a></li>
+          <li id="startsurvey"><%= gettext("Start Survey") %></li>
+          <li><a href="/contact"><%= gettext("Contact Us") %></a></li>
+          <li id="logout"><%= gettext("Logout") %></li>
         </ul>
-        <p class="sub-title titleFont nav username" id="nav">Hello, <%= name %>!</p>
+        <p class="sub-title titleFont nav username" id="nav"><%= gettext("Hello, %s!", name) %></p>
       </div>
     </div>
   </div>

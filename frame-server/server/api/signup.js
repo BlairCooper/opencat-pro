@@ -66,7 +66,7 @@ internals.applyRoutes = function (server, next) {
             }
 
             if (user) {
-              return reply(Boom.conflict('Username already in use.'));
+              return reply(Boom.conflict(request.l10n.gettext("Username already in use.")));
             }
 
             reply(true);
@@ -78,7 +78,7 @@ internals.applyRoutes = function (server, next) {
           Joi.validate(request.payload.password, new PasswordComplexity(complexityOptions), (err, value) => {
             console.error(err);
             if (err) {
-              return reply(Boom.badRequest('Password does not meet complexity rules.'));
+              return reply(Boom.badRequest(request.l10n.gettext("Password does not meet complexity rules.")));
             }
 
             reply(true);
@@ -248,7 +248,7 @@ internals.applyRoutes = function (server, next) {
             }
 
             if (user) {
-              return reply(Boom.conflict('Username already in use.'));
+              return reply(Boom.conflict(request.l10n.gettext("Username already in use.")));
             }
 
             reply(true);
@@ -260,7 +260,7 @@ internals.applyRoutes = function (server, next) {
           Joi.validate(request.payload.password, new PasswordComplexity(complexityOptions), (err, value) => {
             console.error(err);
             if (err) {
-              return reply(Boom.badRequest('Password does not meet complexity rules.'));
+              return reply(Boom.badRequest(request.l10n.gettext("Password does not meet complexity rules.")));
             }
 
             reply(true);
