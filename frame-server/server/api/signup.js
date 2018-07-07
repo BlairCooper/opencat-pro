@@ -163,6 +163,7 @@ internals.applyRoutes = function (server, next) {
             }
           };
           const template = 'welcome';
+          request.payload["project"] = Config.get('/projectName');
 
           // add project name to the payload so it can be used in the email template
           request.payload.projectName = Config.get('/projectName');
@@ -387,6 +388,7 @@ internals.applyRoutes = function (server, next) {
             }
           };
           const template = 'welcome';
+          request.payload["project"] = Config.get('/projectName');
 
           // add project name to the payload so it can be used in the email template
           request.payload.projectName = Config.get('/projectName');

@@ -110,16 +110,14 @@ internals.applyRoutes = function (server, next) {
           };
           const mailer = request.server.plugins.mailer;
 
-          mailer.sendEmail(emailOptions, template, context, (err) => {
+          const template = 'signup-invitation';
+          const context = {
+            url: Config.get('appUrl'),
+            project: Config.get('/projectName')
+          };
 
-            if (err) {
-              console.warn('sending invite email failed:', err.stack);
-            }
-          });
-
-          done();
-        }],
-
+          mailer.sendEmail(emailOptions, template, context, done);
+        }
       }, (err, results) => {
         console.log("results");
       console.log(results);

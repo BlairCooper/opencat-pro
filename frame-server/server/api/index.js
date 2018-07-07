@@ -1,6 +1,7 @@
 'use strict';
 
-const Config = require('../config/config');
+const Util = require('util');
+const Config = require('../../config');
 
 exports.register = function (server, options, next) {
 
@@ -9,7 +10,7 @@ exports.register = function (server, options, next) {
         path: '/',
         handler: function (request, reply) {
 
-            reply({ message: 'Welcome to ' + Config.getAppTitle() + '!' });
+            reply({ message: Util.format('Welcome to %s!', Config.get('/projectName')) });
         }
     });
 
